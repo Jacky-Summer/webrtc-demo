@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC 视频聊天案例</title>
+    <style>
+      video {
+        width: 334px;
+        height: 250px;
+        background-color: #f1f1f1;
+      }
+      .center {
+        text-align: center;
+      }
+      .mt40 {
+        margin-top: 40px;
+      }
+      #btn-chat {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form">
+      <div>请输入房间ID：<input id="room" name="roomId" placeholder="请输入房间ID：" /></div>
+      <div>请输入姓名：<input id="user-name" name="userName" placeholder="请输入姓名：" /></div>
+      <button id="submit-btn">创建/加入房间</button>
+    </div>
+    <div id="chat-container" style="display: none">
+      <h2>视频通话</h2>
+      <div class="center">
+        你的视频：<video autoplay="autoplay" id="local-video"></video> 对方视频：<video
+          autoplay="autoplay"
+          id="remote-video"
+        ></video>
+      </div>
+      <div class="center mt40"><button id="chat-btn">发起视频通话</button></div>
+    </div>
+    <script src="./socket.io.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
